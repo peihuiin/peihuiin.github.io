@@ -16,22 +16,22 @@
   <meta name="author" content="sslin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="更新软件包 123sudo apt-get upgradesudo apt-get updatesudo apt-get dist-upgrade  安装Samba服务器 1sudo apt-get install samba samba-common  添加Samba用户 1sudo smbpasswd -a root  修订配置文件vi &#x2F;etc&#x2F;samba&#x2F;s">
+    <meta name="description" content="工具准备：Node.js、Hexo、GitHub、Git。       创建GitHub站点GitHub官网 1、使用GitHub用户名创建仓库，命名格式：user.github.io，默认分支为master；（user必须为GitHub的用户名） 2、在user.github.io仓库中新建index.html文件，文件内容如：（一般来说，需要仓库名填写正确+仓库非空，仓库才会对外发布">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Samba实现Ubuntu共享文件夹">
-<meta property="og:url" content="https://sslin.online/2023/02/11/Samba/index.html">
+<meta property="og:title" content="GitHub搭建博客">
+<meta property="og:url" content="https://sslin.online/2023/02/12/github%E5%BB%BA%E7%AB%99/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="更新软件包 123sudo apt-get upgradesudo apt-get updatesudo apt-get dist-upgrade  安装Samba服务器 1sudo apt-get install samba samba-common  添加Samba用户 1sudo smbpasswd -a root  修订配置文件vi &#x2F;etc&#x2F;samba&#x2F;s">
+<meta property="og:description" content="工具准备：Node.js、Hexo、GitHub、Git。       创建GitHub站点GitHub官网 1、使用GitHub用户名创建仓库，命名格式：user.github.io，默认分支为master；（user必须为GitHub的用户名） 2、在user.github.io仓库中新建index.html文件，文件内容如：（一般来说，需要仓库名填写正确+仓库非空，仓库才会对外发布">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-10T20:45:45.000Z">
-<meta property="article:modified_time" content="2023-02-10T20:49:44.212Z">
+<meta property="article:published_time" content="2023-02-11T17:53:00.000Z">
+<meta property="article:modified_time" content="2023-02-11T17:54:48.564Z">
 <meta property="article:author" content="sslin">
-<meta property="article:tag" content="Samba">
+<meta property="article:tag" content="GitHub">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Samba实现Ubuntu共享文件夹 - Hexo</title>
+  <title>GitHub搭建博客 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Samba实现Ubuntu共享文件夹"></span>
+            <span id="subtitle" data-typed-text="GitHub搭建博客"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-11 04:45" pubdate>
-          2023年2月11日 凌晨
+        <time datetime="2023-02-12 01:53" pubdate>
+          2023年2月12日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          428 字
+          1.9k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          4 分钟
+          17 分钟
         
       </span>
     
@@ -269,30 +269,56 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Samba实现Ubuntu共享文件夹</h1>
+            <h1 style="display: none">GitHub搭建博客</h1>
             
             
               <div class="markdown-body">
                 
-                <ol>
-<li><p>更新软件包</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get upgrade<br>sudo apt-get update<br>sudo apt-get dist-upgrade<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>安装Samba服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install samba samba-common<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>添加Samba用户</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo smbpasswd -a root<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>修订配置文件<br>vi &#x2F;etc&#x2F;samba&#x2F;smb.conf</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">[samba]<br>   comment = share folder<br>   browseable = yes<br>   path = /<br>   create mask = 0700<br>   directory mask = 0700<br>   valid users = root<br>   force user = root<br>   force group = root<br>   public = yes<br>   available = yes<br>   writable = yes<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>重启Samba服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo service smbd restart<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>更新防火墙规则（Ubuntu20需要执行）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo ufw allow samba<br></code></pre></td></tr></table></figure></li>
-</ol>
+                <blockquote alt="success"><p>
+    工具准备：Node.js、Hexo、GitHub、Git。
+    </p></blockquote>
+
+<h2 id="创建GitHub站点"><a href="#创建GitHub站点" class="headerlink" title="创建GitHub站点"></a>创建GitHub站点</h2><p><a target="_blank" rel="noopener" href="https://github.com/">GitHub官网</a></p>
+<p>1、使用GitHub用户名创建仓库，命名格式：<em>user</em>.github.io，默认分支为<strong>master</strong>；（user必须为GitHub的用户名）</p>
+<p>2、在<em>user</em>.github.io仓库中新建index.html文件，文件内容如：（一般来说，需要仓库名填写正确+仓库非空，仓库才会对外发布）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>网站测试<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>成功！！！可以进行下一步了<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>3、在仓库“Settings”→“Pages”页面可看到如下提示，则仓库发布正常，点击<code>https://sslin.github.io/</code>可跳转到网站首页；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">Your site is live at https://sslin.github.io/<br>Last deployed by @sslin sslin 12 minutes ago<br></code></pre></td></tr></table></figure>
+
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a></h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，能够在几秒内利用靓丽的主题生成静态网页。</p>
+<p>1、安装<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>，选择左边的LTS版本（长期支持版本）；</p>
+<p>2、安装Hexo，CMD中执行<code>npm install hexo-cli -g</code>；</p>
+<p>3、创建博客文件夹，在期望路径下打开Git bash，执行以下命令；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo init &lt;folder&gt;<br>cd &lt;folder&gt;<br>npm install<br>hexo server<br></code></pre></td></tr></table></figure>
+
+<h2 id="保证本地可访问GitHub仓库"><a href="#保证本地可访问GitHub仓库" class="headerlink" title="保证本地可访问GitHub仓库"></a>保证本地可访问GitHub仓库</h2><p>1、配置GitHub用户名、邮箱；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global user.name “用户名”<br>git config --global user.email “邮箱”<br></code></pre></td></tr></table></figure>
+
+<p>2、配置秘钥，使用命令<code>ssh-keygen -t rsa</code>生成秘钥，并将公钥添加到GitHub账户；</p>
+<h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><p>1、网站目录下打开Git Bash安装发布插件，安装命令<code>npm install hexo-deployer-git --save</code>；</p>
+<p>2、修改博客配置文件<code>_config.yml</code>的deploy部分；</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>    <span class="hljs-attr">repository:</span> <span class="hljs-string">ssh://git@github.com/你的用户名/你的库名.git</span><br>    <span class="hljs-attr">brandh:</span> <span class="hljs-string">master</span><br>    <span class="hljs-attr">messge:</span><br></code></pre></td></tr></table></figure>
+
+<p>3、上传博客代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo s<br>hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure>
+
+<p>4、博客网站搭建完成了，通过<code>https://user.github.io/</code>即可访问博客。</p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>如果你觉得域名<code>user.github.io</code>太丑且拥有自己的域名的话，也可以将自己的域名绑定到<code>user.github.io</code>，实现通过自己的域名访问<code>user.github.io</code>。</p>
+<p>域名配置分为：CNAME、A记录。互联网中用IP地址表示一个网站的访问地址，A记录实现用一个容易识别的字符串（域名）表示IP地址，CNAME实现一个域名映射到另一个域名。以百度网站举例，最原始用户只能通过<code>36.152.44.96</code>地址访问，添加A记录后能够通过<code>www.baidu.com</code>，而添加CNAME后又能通过<code>www.baidu2.com</code>访问。</p>
+<ul>
+<li>A记录：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> → 36.152.44.96</li>
+<li>CNAME：<a target="_blank" rel="noopener" href="http://www.baidu2.com/">www.baidu2.com</a> → <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></li>
+</ul>
+<p>我的域名是在<a target="_blank" rel="noopener" href="https://www.aliyun.com/">阿里云</a>上申请的，所以需要上阿里云网站添加A记录和CNAME。</p>
+<p>1、CMD上ping <code>user.github.io</code>获取网站IP；</p>
+<p>2、在阿里云域名解析配置中添加以下规则：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-keyword">A</span>：域名 → 网站IP<br><span class="hljs-keyword">CNAME</span>：www.域名 → user.github.io<br></code></pre></td></tr></table></figure>
+
+<p>3、在GitHub项目中新建CNAME文件（无后缀），内容为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">域名<br>www.域名<br></code></pre></td></tr></table></figure>
+
+<p>4、配置完成，浏览器上通过<code>域名</code>、<code>www.域名</code>、<code>user.github.io</code>都能够访问博客了。</p>
 
                 
               </div>
@@ -311,7 +337,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Ubuntu/" class="category-chain-item">Ubuntu</a>
+  <a href="/categories/Website/" class="category-chain-item">Website</a>
   
   
 
@@ -326,7 +352,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Samba/">#Samba</a>
+        <a href="/tags/GitHub/">#GitHub</a>
       
     </div>
   
@@ -338,8 +364,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Samba实现Ubuntu共享文件夹</div>
-      <div>https://sslin.online/2023/02/11/Samba/</div>
+      <div>GitHub搭建博客</div>
+      <div>https://sslin.online/2023/02/12/github建站/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +377,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年2月11日</div>
+          <div>2023年2月12日</div>
         </div>
       
       
@@ -383,18 +409,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/12/github%E5%BB%BA%E7%AB%99/" title="GitHub搭建博客">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">GitHub搭建博客</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/11/hexo%E5%BB%BA%E7%AB%99/" title="hexo建站（Fluid 主题）">
-                        <span class="hidden-mobile">hexo建站（Fluid 主题）</span>
+                      <a href="/2023/02/11/Samba/" title="Samba实现Ubuntu共享文件夹">
+                        <span class="hidden-mobile">Samba实现Ubuntu共享文件夹</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
