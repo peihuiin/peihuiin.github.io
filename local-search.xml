@@ -22,6 +22,10 @@
       
       <tag>GitHub</tag>
       
+      <tag>Blog</tag>
+      
+      <tag>Hexo</tag>
+      
     </tags>
     
   </entry>
@@ -45,7 +49,9 @@
     
     <tags>
       
-      <tag>hexo</tag>
+      <tag>Blog</tag>
+      
+      <tag>Hexo</tag>
       
     </tags>
     
@@ -72,6 +78,8 @@
       
       <tag>Samba</tag>
       
+      <tag>Ubuntu</tag>
+      
     </tags>
     
   </entry>
@@ -88,14 +96,16 @@
     
     <categories>
       
-      <category>tools</category>
+      <category>Tools</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>typora</tag>
+      <tag>Typora</tag>
+      
+      <tag>Tools</tag>
       
     </tags>
     
