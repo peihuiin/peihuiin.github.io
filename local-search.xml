@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Samba实现Ubuntu共享文件夹</title>
+    <link href="/2023/02/11/Samba/"/>
+    <url>/2023/02/11/Samba/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>更新软件包</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get upgrade<br>sudo apt-get update<br>sudo apt-get dist-upgrade<br></code></pre></td></tr></table></figure></li><li><p>安装Samba服务器</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install samba samba-common<br></code></pre></td></tr></table></figure></li><li><p>添加Samba用户</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo smbpasswd -a root<br></code></pre></td></tr></table></figure></li><li><p>修订配置文件<br>vi &#x2F;etc&#x2F;samba&#x2F;smb.conf</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">[samba]<br>   comment = share folder<br>   browseable = yes<br>   path = /<br>   create mask = 0700<br>   directory mask = 0700<br>   valid users = root<br>   force user = root<br>   force group = root<br>   public = yes<br>   available = yes<br>   writable = yes<br></code></pre></td></tr></table></figure></li><li><p>重启Samba服务器</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo service smbd restart<br></code></pre></td></tr></table></figure></li><li><p>更新防火墙规则（Ubuntu20需要执行）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo ufw allow samba<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Samba</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hexo建站（Fluid 主题）</title>
+    <link href="/2023/02/11/hexo%E5%BB%BA%E7%AB%99/"/>
+    <url>/2023/02/11/hexo%E5%BB%BA%E7%AB%99/</url>
+    
+    <content type="html"><![CDATA[<h2 id="运行环境准备"><a href="#运行环境准备" class="headerlink" title="运行环境准备"></a>运行环境准备</h2><p>安装<a href="https://git-scm.com/download/win">Git</a></p><p>安装<a href="https://nodejs.org/en/">Node.js</a></p><p>安装Hexo</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install -g hexo-cli<br></code></pre></td></tr></table></figure><h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo init &lt;folder&gt;<br>cd &lt;folder&gt;<br>npm install<br>hexo server<br></code></pre></td></tr></table></figure><blockquote><p>安装过程中开启VPN能够加速安装过程。</p></blockquote><h2 id="指定主题"><a href="#指定主题" class="headerlink" title="指定主题"></a>指定主题</h2><p>安装步骤：</p><ol><li>将博客网站文件<strong>fluid</strong>放置在<strong>theme</strong>文件夹下</li><li>将**_config.yml<strong>中的theme名称修改为：</strong>fluid**</li><li>设置博客语言为 zh-CN</li></ol><h2 id="创建关于页（首次使用）"><a href="#创建关于页（首次使用）" class="headerlink" title="创建关于页（首次使用）"></a>创建关于页（首次使用）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new page about<br></code></pre></td></tr></table></figure><p>创建成功后修改 <code>./source/about/index.md</code>，必须添加 <code>layout</code> 属性且值为 <strong>about</strong>。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 标题<br><span class="hljs-section">layout: about</span><br><span class="hljs-section">---</span><br><br>这里可以写正文，支持 Markdown, HTML<br></code></pre></td></tr></table></figure><h2 id="博文添加"><a href="#博文添加" class="headerlink" title="博文添加"></a>博文添加</h2><p>在<code>./source/_posts</code>文件夹下添加**.md**文件，格式如下：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>title: Hello World              // 文章标题<br>date: 2023-02-11 03:10:45       // 创建时间<br>tags: hello                     // 文章标签<br>categories: txt                 // 文章分类<br>index_img:                      // 首页文章的封面图<br>banner_img:                     // 文章页顶部大图<br>---<br>&lt;-- 正文内容 --&gt;<br></code></pre></td></tr></table></figure><p>图片存放在<code>./themes/fluid/source/img</code>下，引用时使用绝对路径<code>/img/img_name</code>。</p><h2 id="配置自定义"><a href="#配置自定义" class="headerlink" title="配置自定义"></a>配置自定义</h2><p>将主题<code>_config.yml</code>配置文件放置在主题文件夹之外，避免更新主题文件时丢失自定义配置。</p><p>方法：将fluid主题<code>_config.yml</code>配置文件复制到博客目录下，并重命名为创建 <code>_config.fluid.yml</code> 。</p><h2 id="指导文档"><a href="#指导文档" class="headerlink" title="指导文档"></a>指导文档</h2><p><a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p><p><a href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p><p><a href="https://hexo.fluid-dev.com/docs/">https://hexo.fluid-dev.com/docs/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Website</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Typora使用手册</title>
+    <link href="/2023/02/11/Typora/"/>
+    <url>/2023/02/11/Typora/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Typora使用手册"><a href="#Typora使用手册" class="headerlink" title="Typora使用手册"></a>Typora使用手册</h1><h2 id="快捷键汇总"><a href="#快捷键汇总" class="headerlink" title="快捷键汇总"></a>快捷键汇总</h2><p><a href="https://support.typoraio.cn/zh/Markdown-Reference/">Typora的Markdown语法</a></p><table><thead><tr><th>样式</th><th>Typora快捷键</th><th>Markdown语法</th></tr></thead><tbody><tr><td>目录</td><td></td><td>[toc]</td></tr><tr><td>H₁ 一级标题</td><td>Ctrl +</td><td># + Space</td></tr><tr><td>H₂ 二级标题</td><td>Ctrl + 2</td><td>## + Space</td></tr><tr><td>H₃ 三级标题</td><td>Ctrl + 3</td><td>### + Space</td></tr><tr><td>H₄ 四级标题</td><td>Ctrl + 4</td><td>#### + Space</td></tr><tr><td>H₅ 五级标题</td><td>Ctrl + 5</td><td>##### + Space</td></tr><tr><td>H₆ 六级标题</td><td>Ctrl + 6</td><td>###### + Space</td></tr><tr><td>正文</td><td>Ctrl + 0</td><td>&#x2F;</td></tr><tr><td>有序列表</td><td>Ctrl + Shell + [</td><td>1. + Space</td></tr><tr><td>无序列表</td><td>Ctrl + Shell + ]</td><td>- + Space</td></tr><tr><td>任务列表</td><td></td><td>- + Space + [ + Space + ] + Space + 文字</td></tr><tr><td><em>斜体</em></td><td>Ctrl + I</td><td>* + 文字 + *</td></tr><tr><td><strong>粗体</strong></td><td>Ctrl + B</td><td>** + 文字 + **</td></tr><tr><td><u>下划线</u></td><td>Ctrl + U</td><td><u> + 文字 + </u></td></tr><tr><td><del>删除线</del></td><td>Ctrl + Shell + 5</td><td>~~ + 文字 + ~~</td></tr><tr><td>&#x3D;&#x3D;高亮&#x3D;&#x3D;</td><td></td><td>&#x3D;&#x3D; + 文字 + &#x3D;&#x3D;</td></tr><tr><td>引用&#x2F;提示块</td><td>Ctrl + Shell + Q</td><td>&gt; + Space<br />或<blockquote><p><br/>    文字<br/>    </p></blockquote></td></tr><tr><td>分割线</td><td>— + Space</td><td>— + Space</td></tr><tr><td>代码块</td><td><em>Ctrl + Shell + K</em>（Ctrl + Shell + C）</td><td></td></tr><tr><td>公式块</td><td>Ctrl + Shell + B</td><td></td></tr><tr><td>插入超链接</td><td>Ctrl + K</td><td>[网址名称] + (网址)</td></tr><tr><td>插入图片</td><td>Ctrl + Shell + I</td><td>! + [图片名称] + (图片路径)</td></tr><tr><td><u>插入表格</u></td><td>Ctrl + T</td><td>| + Space +  表头1 + Space + | + Space +  表头2 + Space + |</td></tr><tr><td><sup>上标</sup></td><td></td><td>[^文字] &#x3D;&#x3D;（表格内不可用）&#x3D;&#x3D;<br/>或 &lt;sup&gt; + 文字 + &lt;&#x2F;sup&gt;</td></tr><tr><td><del>下标</del></td><td></td><td>~ + 文字 + ~ <br/>或 &lt;sub&gt; + 文字 + &lt;&#x2F;sub&gt;</td></tr><tr><td><kbd>方框</kbd></td><td></td><td>&lt;kbd&gt; + 文字 + &lt;&#x2F;kbd&gt;</td></tr><tr><td>表情:smile:</td><td></td><td>: + 表情名称 + : &#x3D;&#x3D;（键入:时Typora会出现提示）&#x3D;&#x3D;</td></tr></tbody></table><blockquote><p>当期望字符单纯作为显示为字符时，使用转义符 <strong>“\”</strong></p></blockquote><blockquote alt="warn"><p>    引用（提示块）可通过 alt="" 置为“success”、"warn"、"danger"类型。    </p></blockquote><h2 id="格式自定义"><a href="#格式自定义" class="headerlink" title="格式自定义"></a>格式自定义</h2><ul><li><strong>修改快捷键</strong></li></ul><p><a href="https://support.typora.io/Shortcut-Keys/#change-shortcut-keys">快捷键指导手册</a></p><p>打开安装路径下的**&#x2F;conf&#x2F;conf.user.json<strong>文件，在</strong>“keyBinding”**属性中添加目的动作及快捷键，如修改插入代码块的快捷键为Ctrl + Shell + C</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;keyBinding&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;Code Fences&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Ctrl+Shift+C&quot;</span><br>  <span class="hljs-comment">// All other options are the menu items &#x27;text label&#x27; displayed from each typora menu</span><br><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br></code></pre></td></tr></table></figure><ul><li><strong>图片左对齐</strong></li></ul><p>设置路径：文件→偏好设置→外观→打开主题文件，在所有CSS文件尾部追加以下代码。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span> <span class="hljs-selector-class">.md-image</span><span class="hljs-selector-pseudo">:only-child</span> &#123;<br>    <span class="hljs-attribute">width</span>: auto;<br>    <span class="hljs-attribute">text-align</span>: left;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="在线图片"><a href="#在线图片" class="headerlink" title="在线图片"></a>在线图片</h2><p><img src="/img/typora%20(2).png"></p><p>​Typora使用以上规则存在图片时，如果复制Typora文件中的图片到其它软件上时会复制失败，这是因为Typora上保存的是图片的本地地址，其它软件无法直接读取。</p><p>​解决方法是将图片保存在云端，Typora存放的是云链接。这里使用Gitee+PicGo进行图片云端备份，操作步骤如下：</p><ol><li>在Gitee中新建仓库用于存放图片；<br><img src="/img/typora%20(4).png"></li><li>在仓库“管理”选项→“基本信息”中，将仓库设置为<strong>开源</strong>方便共享图片；<br><img src="/img/typora%20(5).png"></li><li>生成私人令牌（个人头像→设置→私人令牌→生成新令牌）后续PicGo中需要用到；<br><img src="/img/typora%20(6).png"></li><li>安装Node.js插件（安装PicGo插件gitee-uploader依赖此插件，下载地址 <a href="http://nodejs.cn/download/%EF%BC%8C**%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E4%B8%8D%E4%B8%BAC%E7%9B%98%E4%B8%94%E9%80%89%E6%8B%A9%E4%BB%85%E4%B8%BA%E6%88%91%E5%AE%89%E8%A3%85**%EF%BC%89%EF%BC%9B">http://nodejs.cn/download/，**安装路径不为C盘且选择仅为我安装**）；</a></li><li>设置Node.js环境变量（系统属性→环境变量→“Path变量”），Path下新增Node.js安装<strong>文件夹</strong>路径；</li><li>打开cmd，使用 <strong>node -v</strong>、<strong>npm -v</strong> 命令能够查询版本即为Node.js安装成功；</li><li>安装PicGo（下载地址 <a href="https://github.com/Molunerfinn/PicGo%EF%BC%89%EF%BC%9B">https://github.com/Molunerfinn/PicGo）；</a></li><li>管理员模式打开cmd，进入PicGo安装文件夹目录，执行命令 <strong>npm install picgo-plugin-gitee-uploader</strong> 安装gitee图床插件；</li><li>重新打开PicGo可以在 图床设置中看到gitee选项，配置如下；<br><img src="/img/typora%20(1).png"></li><li>Typora配置PicGo，配置如下：</li></ol><p>问题记录：<br>404问题：<br>    picgo-plugin-gitee-uploader、picgo-plugin-gitee插件存在交替失效的问题，某个插件无法使用时切换到另一个插件即可。</p><p>403问题：</p><p>​貌似因为本地电脑无法ssh通gitee，后续验证。</p><p>c6995dcea968e471d68eddc987720426</p><h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p><a href=".%5CTypora1.4.8%E4%B8%AD%E6%96%87%E7%9B%B4%E8%A3%85%E7%89%88.exe">Typora-v1.4.8-中文安装包</a></p><p><a href="https://github.com/muggledy/typora-dyzj-theme">常用主题</a>（<a href="https://typora-dyzj-theme.vercel.app/">主题预览</a>、<a href="./typora-dyzj-theme-master.zip">安装包</a>）</p><p><a href="%E2%80%AA./node-v16.18.1-x64.msi">Node.js安装包</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>tools</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>typora</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
