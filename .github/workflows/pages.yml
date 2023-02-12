@@ -32,5 +32,11 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY  }}
+          user_name: sslin2github
+          user_email: 13960171358@163.com
+          # 获取提交文章源码时的commit message，作为发布gh-pages分支的信息
+          commit_message: ${{ github.event.head_commit.message }}
+          full_commit_message: ${{ github.event.head_commit.message }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
