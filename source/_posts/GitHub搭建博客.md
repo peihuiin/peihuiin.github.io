@@ -195,3 +195,10 @@ jobs:
           publish_dir: ./public
 
 ```
+3、在博文底部添加编辑文章按钮，支持跳转到GitHub编辑界面。编辑`themes`→`主题文件夹`→`layoutpost.ejs`文件，在`markdown-body`模块下添加：
+
+```html
+<div style="text-align: center ">
+<a href="https://github.com/user/user.github.io/edit/源码存放分支/source/<%- page.source %>" target="_blank">编辑文章✏</a>
+</div>
+```
