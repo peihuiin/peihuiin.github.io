@@ -40,11 +40,11 @@ index_img:
 </html>
 ```
 
-3、在仓库“Settings”→“Pages”页面可看到如下提示，则仓库发布正常，点击`https://sslin.github.io/`可跳转到网站首页；
+3、在仓库“Settings”→“Pages”页面可看到如下提示，则仓库发布正常，点击`https://user.github.io/`可跳转到网站首页；
 
 ```shell
-Your site is live at https://sslin.github.io/
-Last deployed by @sslin sslin 12 minutes ago
+Your site is live at https://user.github.io/
+Last deployed by @user user 12 minutes ago
 ```
 
 ## 安装[Hexo](https://hexo.io/zh-cn/)
@@ -85,7 +85,7 @@ git config --global user.email “邮箱”
 ```yaml
 deploy:
     type: git
-    repository: ssh://git@github.com/你的用户名/你的库名.git
+    repository: ssh://git@github.com/user/user.github.io.git
     brandh: master
     messge:
 ```
@@ -199,6 +199,6 @@ jobs:
 
 ```html
 <div style="text-align: center ">
-<a href="https://github.com/user/user.github.io/edit/源码存放分支/source/<%- page.source %>" target="_blank">编辑文章✏</a>
+<a href="https://github.com/user/user.github.io/edit/sources/source/<%- page.source %>" target="_blank">编辑文章✏</a>
 </div>
 ```
