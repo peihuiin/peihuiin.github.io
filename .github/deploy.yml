@@ -8,10 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
-
     steps:
     # @see https://github.com/actions/checkout
     - name: Checkout Repository master branch
