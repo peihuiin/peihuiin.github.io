@@ -104,5 +104,5 @@ theme: fluid
 deploy:
     type: git
     repository: ssh://git@github.com/sslin2github/sslin2github.github.io.git
-    brandh: master
+    brandh: gh-pages
     messge:

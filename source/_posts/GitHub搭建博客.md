@@ -135,3 +135,63 @@ www.域名
 ```
 
 4、配置完成，浏览器上通过`域名`、`www.域名`、`user.github.io`都能够访问博客了。
+
+## 在线编辑博文
+
+Hexo本地搭建博客后，用户每次编辑博文都需要在重新将源码提交到GitHub，并编译提交网站源码。为了提高Hexo编辑博文的易用性，我们可以通过[GitHub Actions](https://docs.github.com/zh/actions/learn-github-actions)实现博客的自动编译发布，即我们每次提交博客源码或GitHub上更新博文后，GitHub Actions自动触发博客的编译发布。
+
+1、添加秘钥用于deploy过程操作GitHub仓库；
+
+使用命令`ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""`生成`gh-pages`私钥、`gh-pages.pub`公钥；
+
+仓库配置`Deploy Keys`→`Add deploy key`添加 `gh-pages.pub`公钥，name为`public key of ACTIONS_DEPLOY_KEY`，并在新建deploy key后点击`approve`按钮。
+
+仓库配置`secrets and variables`→`Actions`→`New repository secret` ，name为`ACTIONS_DEPLOY_KEY`（后续yml文件中使用）。
+
+2、新建`.github/workflows/pages.yml`文件自定义GitHub Actions操作，内容参照[Hexo指导文档](https://hexo.io/zh-cn/docs/github-pages)。
+
+```yaml
+name: Pages
+
+on:
+  push:
+    branches:
+      - sources # default branch
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 19.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: "v19.6.0"
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Setup Git Infomation
+        run: |
+          git config --global user.name 'name'
+          git config --global user.email 'email'
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          user_name: ${user.name}
+          user_email: ${user.email}
+          # 获取提交文章源码时的commit message，作为发布gh-pages分支的信息
+          commit_message: ${{ github.event.head_commit.message }}
+          full_commit_message: ${{ github.event.head_commit.message }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+
+```
