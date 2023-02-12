@@ -138,7 +138,7 @@ www.域名
 
 ## 在线编辑博文
 
-Hexo本地搭建博客后，用户每次编辑博文都需要在重新将源码提交到GitHub，并编译提交网站源码。为了提高Hexo编辑博文的易用性，我们可以通过[GitHub Actions](https://docs.github.com/zh/actions/learn-github-actions)实现博客的自动编译发布，即我们每次提交博客源码或GitHub上更新博文后，GitHub Actions自动触发博客的编译发布。
+Hexo本地搭建博客后，用户每次编辑博文都需要重新将源码提交到GitHub，并编译提交网站源码。为了提高Hexo编辑博文的易用性，我们可以通过[GitHub Actions](https://docs.github.com/zh/actions/learn-github-actions)实现博客的自动编译发布，即我们每次提交博客源码或GitHub上更新博文后，GitHub Actions自动触发博客的编译发布。
 
 1、添加秘钥用于deploy过程操作GitHub仓库；
 
