@@ -81,7 +81,23 @@ banner_img:                     // 文章页顶部大图
 
 方法：将fluid主题`_config.yml`配置文件复制到博客目录下，并重命名为创建 `_config.fluid.yml` 。
 
-## 指导文档
+## 常用命令汇总
+
+☛ hexo init [folder]，新建网站
+
+☛ hexo new [name]，新建文章
+
+☛ hexo server，运行博客网站
+
+☛ hexo clean，清除缓存文件 (`db.json`) 和已生成的静态文件 (`public`)
+
+☛ hexo generate，生成静态网站文件
+
+☛ hexo deploy，部署网站
+
+☛ hexo version，查看hexo版本
+
+## 指导文章
 
 https://hexo.io/zh-cn/docs/
 

@@ -1,10 +1,10 @@
 ---
 title: Typora使用手册
 date: 2023-02-11 04:25:45
-categories: Tools
+categories: Markdown
 tags:
+   - Markdown
    - Typora
-   - Tools
 ---
 
 # Typora使用手册
