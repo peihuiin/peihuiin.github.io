@@ -24,7 +24,7 @@
 <meta property="og:description" content="工具准备：Node.js、Hexo、GitHub、Git。       创建GitHub站点GitHub官网 1、使用GitHub用户名创建仓库，命名格式：user.github.io，默认分支为master；（user必须为GitHub的用户名） 2、在user.github.io仓库中新建index.html文件，文件内容如：（一般来说，需要仓库名填写正确+仓库非空，仓库才会对外发布">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-12T01:53:00.000Z">
-<meta property="article:modified_time" content="2023-02-14T15:27:02.685Z">
+<meta property="article:modified_time" content="2023-02-14T17:09:14.325Z">
 <meta property="article:author" content="sslin">
 <meta property="article:tag" content="GitHub">
 <meta property="article:tag" content="Blog">
@@ -455,19 +455,23 @@
   
     <article id="comments" lazyload>
       
-  <div id="gitalk-container"></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#gitalk-container', function() {
-      Fluid.utils.createCssLink('/css/gitalk.css')
-      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
         var options = Object.assign(
-          {"clientID":"f3d75f6fea56a598fb69","clientSecret":"1e785c541a1b20b08d6eaf7d2259b5b9789ae3ca","repo":"sslin2github.github.io","owner":"sslin2github","admin":"sslin2github","language":"zh-CN","labels":"Gitalk","perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {"appId":"F6MgVlfVETam5CqCMOlaGoEt-gzGzoHsz","appKey":"UdpWCRbOotsTy5JjGaUxFztp","path":"window.location.pathname","placeholder":"支持使用Markdown语法","avatar":"monsterid","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true,"notify":true,"visitor":true},
           {
-            id: '304a8e69919b49df9c9a2de74b8ded29'
+            el: "#valine",
+            path: window.location.pathname
           }
         )
-        var gitalk = new Gitalk(options);
-        gitalk.render('gitalk-container');
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
       });
     });
   </script>

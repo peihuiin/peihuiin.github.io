@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>hexo添加评论区</title>
+    <link href="/2023/02/15/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8C%BA/"/>
+    <url>/2023/02/15/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8C%BA/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a>Valine</h2><p>官网：<a href="https://leancloud.cn/">https://leancloud.cn/</a></p><p>1、<code>应用</code>→<code>创建应用</code>，创建完成后在<code>设置</code>→<code>应用Keys</code>中获取AppID和AppKey</p><p>2、在主题配置文件中指定Valine为评论模块</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-attr">comments:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">disqus</span><br></code></pre></td></tr></table></figure><p>3、配置Valine评论模块参数</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">valine:</span><br>  <span class="hljs-attr">appId:</span> <span class="hljs-comment">#Appid</span><br>  <span class="hljs-attr">appKey:</span> <span class="hljs-comment">#AppKey</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">window.location.pathname</span><br>  <span class="hljs-attr">placeholder:</span> <span class="hljs-string">&#x27;支持使用Markdown语法&#x27;</span><span class="hljs-comment">#评论区默认填充文字</span><br>  <span class="hljs-attr">avatar:</span> <span class="hljs-string">mp</span><span class="hljs-comment">#默认显示头像</span><br>  <span class="hljs-attr">meta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>, <span class="hljs-string">&#x27;mail&#x27;</span>, <span class="hljs-string">&#x27;link&#x27;</span>]<span class="hljs-comment">#显示评论者属性</span><br>  <span class="hljs-attr">requiredFields:</span> []<br>  <span class="hljs-attr">pageSize:</span> <span class="hljs-number">10</span><span class="hljs-comment">#每页显示评论数</span><br>  <span class="hljs-attr">visitor:</span> <span class="hljs-literal">true</span><span class="hljs-comment">#文章访问量统计</span><br>  <span class="hljs-attr">lang:</span> <span class="hljs-string">&#x27;zh-CN&#x27;</span><span class="hljs-comment">#自定义语言</span><br>  <span class="hljs-attr">highlight:</span> <span class="hljs-literal">true</span><span class="hljs-comment">#代码高亮</span><br>  <span class="hljs-attr">recordIP:</span> <span class="hljs-literal">true</span><span class="hljs-comment">#是否记录评论者IP</span><br>  <span class="hljs-attr">serverURLs:</span> <span class="hljs-string">&#x27;&#x27;</span><br>  <span class="hljs-attr">emojiCDN:</span><br>  <span class="hljs-attr">emojiMaps:</span><br>  <span class="hljs-attr">enableQQ:</span> <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure><p>4、Valine需要使用<a href="http://cn.gravatar.com/">Gravatar</a> 自定义评论列表头像；</p><p>5、在Valine应用<code>数据存储</code>→<code>结构化数据</code>→<code>Comment</code>内管理评论；</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Blog</tag>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>代码简洁之道</title>
     <link href="/2023/02/14/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/"/>
     <url>/2023/02/14/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/</url>

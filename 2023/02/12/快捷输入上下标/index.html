@@ -24,7 +24,7 @@
 <meta property="og:description" content="日常文字输入过程中，对于上标、下标的输入不太友好，我们可以通过自定义映射的方式快捷输入。 搜狗输入法我的输入法→ 属性设置→高级→自定义短语→直接编辑配置文件，自选以下内容粘贴。 数字下标 12345678910xbling,1&#x3D;₀xbyi,1&#x3D;₁xber,1&#x3D;₂xbsan,1&#x3D;₃xbsi,1&#x3D;₄xbwu,1&#x3D;₅xbliu,1&#x3D;₆xbqi,1&#x3D;₇xbba,1&#x3D;₈xbjiu,1&#x3D;₉ 数字上标 123">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-12T23:12:42.000Z">
-<meta property="article:modified_time" content="2023-02-14T15:27:02.685Z">
+<meta property="article:modified_time" content="2023-02-14T17:09:14.325Z">
 <meta property="article:author" content="sslin">
 <meta property="article:tag" content="Tips">
 <meta name="twitter:card" content="summary_large_image">
@@ -404,19 +404,23 @@
   
     <article id="comments" lazyload>
       
-  <div id="gitalk-container"></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#gitalk-container', function() {
-      Fluid.utils.createCssLink('/css/gitalk.css')
-      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
         var options = Object.assign(
-          {"clientID":"f3d75f6fea56a598fb69","clientSecret":"1e785c541a1b20b08d6eaf7d2259b5b9789ae3ca","repo":"sslin2github.github.io","owner":"sslin2github","admin":"sslin2github","language":"zh-CN","labels":"Gitalk","perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {"appId":"F6MgVlfVETam5CqCMOlaGoEt-gzGzoHsz","appKey":"UdpWCRbOotsTy5JjGaUxFztp","path":"window.location.pathname","placeholder":"支持使用Markdown语法","avatar":"monsterid","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true,"notify":true,"visitor":true},
           {
-            id: '99e803cb6b5d48179ce65319221cecd5'
+            el: "#valine",
+            path: window.location.pathname
           }
         )
-        var gitalk = new Gitalk(options);
-        gitalk.render('gitalk-container');
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
       });
     });
   </script>
