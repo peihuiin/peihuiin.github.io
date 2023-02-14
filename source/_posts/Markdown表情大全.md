@@ -3,7 +3,6 @@ title: Markdown表情大全
 date: 2023-02-12 23:51:43
 categories: Markdown
 tags: Markdown
-comment: 'disqus'
 ---
 
 ## 👮People（人物）

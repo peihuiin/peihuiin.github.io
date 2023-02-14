@@ -6,8 +6,6 @@ tags:
     - GitHub
     - Blog
     - Hexo
-comment: 'disqus'
-index_img:
 ---
 
 <blockquote alt="success"><p>

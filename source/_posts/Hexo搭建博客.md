@@ -5,8 +5,6 @@ categories: Blog
 tags:
     - Hexo
     - Blog
-comment: 'disqus'
-index_img:
 ---
 
 ## 运行环境准备

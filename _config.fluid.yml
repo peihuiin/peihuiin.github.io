@@ -424,9 +424,9 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="" target="_blank" rel="nofollow noopener"><span>sslin</span></a>
+    <a href="" target="_blank" rel="nofollow noopener"><span>lph</span></a>
     <i class="iconfont icon-love"></i>
-    <a href="" target="_blank" rel="nofollow noopener"><span>cat</span></a>
+    <a href="" target="_blank" rel="nofollow noopener"><span>fjr</span></a>
   '
 
   # 展示网站的 PV、UV 统计数
@@ -724,11 +724,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
-    type: disqus
+    type: gitalk
 
 
 #---------------------------
@@ -767,13 +767,13 @@ disqus:
 # Based on GitHub Issues
 # See: https://github.com/gitalk/gitalk#options
 gitalk:
-  clientID:
-  clientSecret:
-  repo:
-  owner:
-  admin: ['name']
+  clientID: f3d75f6fea56a598fb69
+  clientSecret: 152556cb6693e1f5c05f7bfee42738569db53114
+  repo: sslin2github.github.io
+  owner: sslin2github
+  admin: sslin2github
   language: zh-CN
-  labels: ['Gitalk']
+  labels: 'Gitalk'
   perPage: 10
   pagerDirection: last
   distractionFreeMode: false
@@ -783,6 +783,7 @@ gitalk:
   # https://github.com/gitalk/gitalk/issues/429
   # https://github.com/Zibri/cloudflare-cors-anywhere
   proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
+
 
 # Valine
 # 基于 LeanCloud
@@ -1060,7 +1061,7 @@ links:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus

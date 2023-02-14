@@ -3,7 +3,6 @@ title: 初始Django
 date: 2023-02-14 22:06:59
 categories: Django
 tags: Django
-comment: 'disqus'
 ---
 
 # 初识Django
