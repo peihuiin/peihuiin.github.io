@@ -728,7 +728,7 @@ post:
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
-    type: gitalk
+    type: valine
 
 
 #---------------------------
@@ -778,6 +778,7 @@ gitalk:
   pagerDirection: last
   distractionFreeMode: false
   createIssueManually: true
+  shortname: fluid
   # 默认 proxy 可能会失效，解决方法请见下方链接
   # The default proxy may be invalid, refer to the links for solutions
   # https://github.com/gitalk/gitalk/issues/429
@@ -790,21 +791,23 @@ gitalk:
 # Based on LeanCloud
 # See: https://valine.js.org/
 valine:
-  appId:
-  appKey:
+  appId: F6MgVlfVETam5CqCMOlaGoEt-gzGzoHsz
+  appKey: UdpWCRbOotsTy5JjGaUxFztp
+  notify: true
   path: window.location.pathname
-  placeholder:
-  avatar: 'retro'
+  placeholder: '支持使用Markdown语法'
+  avatar: monsterid
   meta: ['nick', 'mail', 'link']
   requiredFields: []
   pageSize: 10
+  visitor: true
   lang: 'zh-CN'
-  highlight: false
-  recordIP: false
+  highlight: true
+  recordIP: true
   serverURLs: ''
   emojiCDN:
   emojiMaps:
-  enableQQ: false
+  enableQQ: true
 
 # Waline
 # 从 Valine 衍生而来，额外增加了服务端和多种功能
