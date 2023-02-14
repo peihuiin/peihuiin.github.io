@@ -977,8 +977,8 @@ about:
       # Request headers
       headers: {}
 
-      # 从请求结果获取字符串的取值字段，最终必须是一个字符串，例如返回结果为 {"data": {"author": "fluid", "content": "An elegant theme"}}, 则取值字段为 ['data', 'content']；如果返回是列表则自动选择第一项
-      # The value field of the string obtained from the response. For example, the response content is {"data": {"author": "fluid", "content": "An elegant theme"}}, the expected `keys: ['data','content']`; if the return is a list, the first item is automatically selected
+      # 从请求结果获取字符串的取值字段，最终必须是一个字符串，例如返回结果为 {"data": {"author": "sslin", "content": "An elegant theme"}}, 则取值字段为 ['data', 'content']；如果返回是列表则自动选择第一项
+      # The value field of the string obtained from the response. For example, the response content is {"data": {"author": "sslin", "content": "An elegant theme"}}, the expected `keys: ['data','content']`; if the return is a list, the first item is automatically selected
       keys: []
 
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
@@ -1029,7 +1029,7 @@ links:
   # Member item of page
   items:
     - {
-      title: "Fluid Blog",
+      title: "sslin Blog",
       intro: "主题博客",
       link: "https://hexo.fluid-dev.com/",
       avatar: "/img/favicon.png"
