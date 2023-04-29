@@ -16,23 +16,22 @@
   <meta name="author" content="sslin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="运行环境准备安装Git 安装Node.js 安装Hexo 1npm install -g hexo-cli  建站1234hexo init &lt;folder&gt;cd &lt;folder&gt;npm installhexo server   安装过程中开启VPN能够加速安装过程。  指定主题安装步骤：  将博客网站文件fluid放置在theme文件夹下 将**_config.yml中的">
+    <meta name="description" content="初识DjangoDjango 是一个由 Python 编写的一个开放源代码的 Web 应用框架（用于进行Web开发的一套软件架构）。Django基于MTV模型开发，本质上和MVC模型是一样的（Model 模型、View 视图、Controller 控制器）。    MVC模型 MTV模型    @Model，功能实现，负责业务对象和数据库的映射（ORM）；@View，图形界面，负责和用户交互；@C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo搭建博客（Fluid 主题）">
-<meta property="og:url" content="https://sslin.online/2023/02/11/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="初始Django">
+<meta property="og:url" content="https://sslin.online/2023/02/14/%E5%88%9D%E5%A7%8BDjango/index.html">
 <meta property="og:site_name" content="sslin">
-<meta property="og:description" content="运行环境准备安装Git 安装Node.js 安装Hexo 1npm install -g hexo-cli  建站1234hexo init &lt;folder&gt;cd &lt;folder&gt;npm installhexo server   安装过程中开启VPN能够加速安装过程。  指定主题安装步骤：  将博客网站文件fluid放置在theme文件夹下 将**_config.yml中的">
+<meta property="og:description" content="初识DjangoDjango 是一个由 Python 编写的一个开放源代码的 Web 应用框架（用于进行Web开发的一套软件架构）。Django基于MTV模型开发，本质上和MVC模型是一样的（Model 模型、View 视图、Controller 控制器）。    MVC模型 MTV模型    @Model，功能实现，负责业务对象和数据库的映射（ORM）；@View，图形界面，负责和用户交互；@C">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-10T20:45:45.000Z">
-<meta property="article:modified_time" content="2023-02-14T15:51:31.827Z">
+<meta property="article:published_time" content="2023-02-14T14:06:59.000Z">
+<meta property="article:modified_time" content="2023-02-14T15:51:31.829Z">
 <meta property="article:author" content="sslin">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="Django">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hexo搭建博客（Fluid 主题） - sslin</title>
+  <title>初始Django - sslin</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo搭建博客（Fluid 主题）"></span>
+            <span id="subtitle" data-typed-text="初始Django"></span>
           
         </div>
 
@@ -209,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-11 04:45" pubdate>
-          2023年2月11日 凌晨
+        <time datetime="2023-02-14 22:06" pubdate>
+          2023年2月14日 晚上
         </time>
       </span>
     
@@ -221,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          984 字
+          2.4k 字
         
       </span>
     
@@ -232,7 +231,7 @@
         
         
         
-          9 分钟
+          20 分钟
         
       </span>
     
@@ -270,53 +269,63 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo搭建博客（Fluid 主题）</h1>
+            <h1 style="display: none">初始Django</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="运行环境准备"><a href="#运行环境准备" class="headerlink" title="运行环境准备"></a>运行环境准备</h2><p>安装<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git</a></p>
-<p>安装<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a></p>
-<p>安装Hexo</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+                <h1 id="初识Django"><a href="#初识Django" class="headerlink" title="初识Django"></a>初识Django</h1><p>Django 是一个由 Python 编写的一个开放源代码的 Web 应用框架（用于进行Web开发的一套软件架构）。Django基于MTV模型开发，本质上和MVC模型是一样的（Model 模型、View 视图、Controller 控制器）。</p>
+<table>
+<thead>
+<tr>
+<th>MVC模型</th>
+<th>MTV模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Model，功能实现，负责业务对象和数据库的映射（ORM）；<br />@View，图形界面，负责和用户交互；<br />@Controller，处理、转发请求；</td>
+<td>@Model，功能实现，负责业务对象和数据库的映射（ORM）；<br />@Template，负责如何把页面（html）展示给用户；<br />@View，用户交互，调用Model、Template；</td>
+</tr>
+<tr>
+<td>![img](&#x2F;img&#x2F;Django (3).png)</td>
+<td>![img](&#x2F;img&#x2F;Django (1).png)</td>
+</tr>
+</tbody></table>
+<h2 id="1-Django环境搭建"><a href="#1-Django环境搭建" class="headerlink" title="1. Django环境搭建"></a>1. Django环境搭建</h2><ul>
+<li>通过pip安装django；</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">方法1：<br>pip --default-timeout=100 install -U django<br><br>方法2：<br>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple django<br><br>//不建议直接使用 pip install django，国内网速太慢会导致下载超时报错。<br></code></pre></td></tr></table></figure>
 
-<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo init &lt;folder&gt;<br>cd &lt;folder&gt;<br>npm install<br>hexo server<br></code></pre></td></tr></table></figure>
+<ul>
+<li>能够查看Django版本则安装成功；</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">C:\Users\<span class="hljs-number">13960</span>&gt;python<br>Python <span class="hljs-number">3.8</span><span class="hljs-number">.10</span> (tags/v3<span class="hljs-number">.8</span><span class="hljs-number">.10</span>:3d8993a, May  <span class="hljs-number">3</span> <span class="hljs-number">2021</span>, <span class="hljs-number">11</span>:<span class="hljs-number">48</span>:03) [MSC v<span class="hljs-number">.1928</span> <span class="hljs-number">64</span> bit (AMD64)] on win32<br><span class="hljs-type">Type</span> <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string">&quot;copyright&quot;</span>, <span class="hljs-string">&quot;credits&quot;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;license&quot;</span> <span class="hljs-keyword">for</span> more information.<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> django<br><span class="hljs-meta">&gt;&gt;&gt; </span>django.get_version()<br><span class="hljs-string">&#x27;4.1.4&#x27;</span><br></code></pre></td></tr></table></figure>
 
-<blockquote>
-<p>安装过程中开启VPN能够加速安装过程。</p>
-</blockquote>
-<h2 id="指定主题"><a href="#指定主题" class="headerlink" title="指定主题"></a>指定主题</h2><p>安装步骤：</p>
-<ol>
-<li>将博客网站文件<strong>fluid</strong>放置在<strong>theme</strong>文件夹下</li>
-<li>将**_config.yml<strong>中的theme名称修改为：</strong>fluid**</li>
-<li>设置博客语言为 zh-CN</li>
-</ol>
-<h2 id="创建关于页（首次使用）"><a href="#创建关于页（首次使用）" class="headerlink" title="创建关于页（首次使用）"></a>创建关于页（首次使用）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new page about<br></code></pre></td></tr></table></figure>
+<ul>
+<li>在D:\Django路径下创建Django项目<strong>HelloWorld</strong>，并启动服务器，Django项目文件结构如下：<ul>
+<li><strong>HelloWorld:</strong> 项目的容器；<ul>
+<li><strong><strong>init</strong>.py:</strong> 一个空文件，告诉 Python 该目录是一个 Python 包；</li>
+<li><strong>asgi.py:</strong> 一个 ASGI 兼容的 Web 服务器的入口，以便运行你的项目；</li>
+<li><strong>settings.py:</strong> 该 Django 项目的设置&#x2F;配置；</li>
+<li><strong>urls.py:</strong> 该 Django 项目的 URL 声明; 一份由 Django 驱动的网站”目录”；</li>
+<li><strong>wsgi.py:</strong> 一个 WSGI 兼容的 Web 服务器的入口，以便运行你的项目；</li>
+</ul>
+</li>
+<li><strong>manage.py:</strong> 一个实用的命令行工具，可让你以各种方式与该 Django 项目进行交互；</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">PS</span> D:\Django&gt; django<span class="hljs-literal">-admin</span> startproject HelloWorld<br><span class="hljs-built_in">PS</span> D:\Django&gt; <span class="hljs-built_in">cd</span> .\HelloWorld\<br><span class="hljs-built_in">PS</span> D:\Django\HelloWorld&gt; python manage.py runserver <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span>:<span class="hljs-number">8000</span><br>Watching <span class="hljs-keyword">for</span> file changes with StatReloader<br>Performing system checks...<br><br>System check identified no issues (<span class="hljs-number">0</span> silenced).<br><br>You have <span class="hljs-number">18</span> unapplied migration(s). Your project may not work properly <span class="hljs-keyword">until</span> you apply the migrations <span class="hljs-keyword">for</span> app(s): admin, auth, contenttypes, sessions.<br>Run <span class="hljs-string">&#x27;python manage.py migrate&#x27;</span> to apply them.<br>December <span class="hljs-number">11</span>, <span class="hljs-number">2022</span> - <span class="hljs-number">13</span>:<span class="hljs-number">00</span>:<span class="hljs-number">05</span><br>Django version <span class="hljs-number">4.1</span>.<span class="hljs-number">4</span>, <span class="hljs-keyword">using</span> settings <span class="hljs-string">&#x27;HelloWorld.settings&#x27;</span><br>Starting development server at http://<span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span>:<span class="hljs-number">8000</span>/<br>Quit the server with CTRL<span class="hljs-literal">-BREAK</span>.<br>[<span class="hljs-number">11</span>/<span class="hljs-type">Dec</span>/<span class="hljs-number">2022</span> <span class="hljs-number">13</span>:<span class="hljs-number">00</span>:<span class="hljs-number">40</span>] <span class="hljs-string">&quot;GET / HTTP/1.1&quot;</span> <span class="hljs-number">200</span> <span class="hljs-number">10681</span><br>[<span class="hljs-number">11</span>/<span class="hljs-type">Dec</span>/<span class="hljs-number">2022</span> <span class="hljs-number">13</span>:<span class="hljs-number">00</span>:<span class="hljs-number">40</span>] <span class="hljs-string">&quot;GET /static/admin/css/fonts.css HTTP/1.1&quot;</span> <span class="hljs-number">200</span> <span class="hljs-number">423</span><br>[<span class="hljs-number">11</span>/<span class="hljs-type">Dec</span>/<span class="hljs-number">2022</span> <span class="hljs-number">13</span>:<span class="hljs-number">00</span>:<span class="hljs-number">40</span>] <span class="hljs-string">&quot;GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1&quot;</span> <span class="hljs-number">200</span> <span class="hljs-number">86184</span><br>[<span class="hljs-number">11</span>/<span class="hljs-type">Dec</span>/<span class="hljs-number">2022</span> <span class="hljs-number">13</span>:<span class="hljs-number">00</span>:<span class="hljs-number">40</span>] <span class="hljs-string">&quot;GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1&quot;</span> <span class="hljs-number">200</span> <span class="hljs-number">85876</span><br>[<span class="hljs-number">11</span>/<span class="hljs-type">Dec</span>/<span class="hljs-number">2022</span> <span class="hljs-number">13</span>:<span class="hljs-number">00</span>:<span class="hljs-number">40</span>] <span class="hljs-string">&quot;GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1&quot;</span> <span class="hljs-number">200</span> <span class="hljs-number">85692</span><br>Not Found: /favicon.ico<br>[<span class="hljs-number">11</span>/<span class="hljs-type">Dec</span>/<span class="hljs-number">2022</span> <span class="hljs-number">13</span>:<span class="hljs-number">00</span>:<span class="hljs-number">40</span>] <span class="hljs-string">&quot;GET /favicon.ico HTTP/1.1&quot;</span> <span class="hljs-number">404</span> <span class="hljs-number">2114</span><br></code></pre></td></tr></table></figure>
 
-<p>创建成功后修改 <code>./source/about/index.md</code>，必须添加 <code>layout</code> 属性且值为 <strong>about</strong>。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 标题<br><span class="hljs-section">layout: about</span><br><span class="hljs-section">---</span><br><br>这里可以写正文，支持 Markdown, HTML<br></code></pre></td></tr></table></figure>
-
-<h2 id="博文添加"><a href="#博文添加" class="headerlink" title="博文添加"></a>博文添加</h2><p>在<code>./source/_posts</code>文件夹下添加**.md**文件，格式如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>title: Hello World              // 文章标题<br>date: 2023-02-11 03:10:45       // 创建时间<br>tags: hello                     // 文章标签<br>categories: txt                 // 文章分类<br>index_img:                      // 首页文章的封面图<br>banner_img:                     // 文章页顶部大图<br>---<br>&lt;-- 正文内容 --&gt;<br></code></pre></td></tr></table></figure>
-
-<p>图片存放在<code>./themes/fluid/source/img</code>下，引用时使用绝对路径<code>/img/img_name</code>。</p>
-<h2 id="配置自定义"><a href="#配置自定义" class="headerlink" title="配置自定义"></a>配置自定义</h2><p>将主题<code>_config.yml</code>配置文件放置在主题文件夹之外，避免更新主题文件时丢失自定义配置。</p>
-<p>方法：将fluid主题<code>_config.yml</code>配置文件复制到博客目录下，并重命名为创建 <code>_config.fluid.yml</code> 。</p>
-<h2 id="常用命令汇总"><a href="#常用命令汇总" class="headerlink" title="常用命令汇总"></a>常用命令汇总</h2><p>☛ hexo init [folder]，新建网站</p>
-<p>☛ hexo new [name]，新建文章</p>
-<p>☛ hexo server，运行博客网站</p>
-<p>☛ hexo clean，清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)</p>
-<p>☛ hexo generate，生成静态网站文件</p>
-<p>☛ hexo deploy，部署网站</p>
-<p>☛ hexo version，查看hexo版本</p>
-<h2 id="指导文章"><a href="#指导文章" class="headerlink" title="指导文章"></a>指导文章</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
-<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/">https://hexo.fluid-dev.com/docs/</a></p>
+<ul>
+<li>浏览器能够成功打开**<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/**%E9%A1%B5%E9%9D%A2%EF%BC%8C%E5%88%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%AD%A3%E5%B8%B8%E5%90%AF%E5%8A%A8%EF%BC%9B">http://127.0.0.1:8000/**页面，则服务器正常启动；</a></li>
+</ul>
+<p>![image-20221211130557213](&#x2F;img&#x2F;Django (2).png)</p>
 
                 
               </div>
               <div style="text-align: center ">
-                <a href="https://github.com/sslin2github/sslin2github.github.io/edit/sources/source/_posts/Hexo搭建博客.md" target="_blank">编辑文章✏</a>
+                <a href="https://github.com/sslin2github/sslin2github.github.io/edit/sources/source/_posts/初始Django.md" target="_blank">编辑文章✏</a>
               </div>
             
             <hr/>
@@ -333,7 +342,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
+  <a href="/categories/Django/" class="category-chain-item">Django</a>
   
   
 
@@ -348,9 +357,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/">#Hexo</a>
-      
-        <a href="/tags/Blog/">#Blog</a>
+        <a href="/tags/Django/">#Django</a>
       
     </div>
   
@@ -362,8 +369,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo搭建博客（Fluid 主题）</div>
-      <div>https://sslin.online/2023/02/11/Hexo搭建博客/</div>
+      <div>初始Django</div>
+      <div>https://sslin.online/2023/02/14/初始Django/</div>
     </div>
     <div class="license-meta">
       
@@ -375,7 +382,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年2月11日</div>
+          <div>2023年2月14日</div>
         </div>
       
       
@@ -407,9 +414,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/12/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="GitHub搭建博客">
+                      <a href="/2023/02/14/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/" title="代码简洁之道">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">GitHub搭建博客</span>
+                        <span class="hidden-mobile">代码简洁之道</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -417,8 +424,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/11/Samba/" title="Samba实现Ubuntu共享文件夹">
-                        <span class="hidden-mobile">Samba实现Ubuntu共享文件夹</span>
+                      <a href="/2023/02/12/Markdown%E8%A1%A8%E6%83%85%E5%A4%A7%E5%85%A8/" title="Markdown表情大全">
+                        <span class="hidden-mobile">Markdown表情大全</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

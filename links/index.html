@@ -274,6 +274,33 @@
 
 
 
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"f3d75f6fea56a598fb69","clientSecret":"1e785c541a1b20b08d6eaf7d2259b5b9789ae3ca","repo":"sslin2github.github.io","owner":"sslin2github","admin":"sslin2github","language":"zh-CN","labels":"Gitalk","perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","shortname":"fluid"},
+          {
+            id: '38687fdbcd50268b872dd8c493f739e6'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
 
               </div>
             </div>
@@ -319,7 +346,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>sslin</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="" target="_blank" rel="nofollow noopener"><span>lph</span></a> <i class="iconfont icon-love"></i> <a href="" target="_blank" rel="nofollow noopener"><span>fjr</span></a> 
     </div>
   
   
